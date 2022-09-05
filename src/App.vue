@@ -14,17 +14,16 @@ import HelloWorld from "./components/HelloWorld.vue";
             <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Página Inicial <span class="sr-only">(current)</span></a>
-                    </li>
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                        Emuladores
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Game Boy Colors</a>
-                        <a class="dropdown-item" href="#">Game Boy Advanced</a>
-                        <a class="dropdown-item" href="#">Nintendo DS</a>
-                        <a class="dropdown-item" href="#">Game Cube</a>
-                    </div>
                   </li>
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                      Emuladores
+                  </a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Game Boy Colors</a>
+                      <a class="dropdown-item" href="#">Game Boy Advanced</a>
+                      <a class="dropdown-item" href="#">Nintendo DS</a>
+                      <a class="dropdown-item" href="#">Game Cube</a>
+                  </div>
                   <form class="form-inline">
                       <div class="input-group">
                       <div class="input-group-prepend">
