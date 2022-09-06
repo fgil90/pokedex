@@ -1,4 +1,3 @@
-
 <template>
 
     <footer class="bg-dark text-center text-white fixed-bottom">
@@ -42,7 +41,7 @@
         <!-- Copyright -->
         
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            <small>© 2022 Copyright - Produced by<a class="text-white" href="https://github.com/fgil90">Felipe Gil</a> <span>e</span> <a class="text-white" href="https://github.com/lindotex">Alisson Lindote </a></small>
+            <small>© 2022 Copyright - Produced by <a class="text-white" href="https://github.com/fgil90">Felipe Gil</a> <span>e</span> <a class="text-white" href="https://github.com/lindotex">Alisson Lindote </a></small>
         </div>
     <!-- Copyright -->
     </footer>
