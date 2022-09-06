@@ -13,7 +13,6 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <IconCommunity/>        
         <div class="collapse navbar-collapse mr-1" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">

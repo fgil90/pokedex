@@ -33,11 +33,11 @@
 /* FONT FAMILY */
 @font-face {
   font-family: 'Pokemon Hollow';
-  src: url('../pokedex/src/assets/font/Pokemon Hollow.ttf');
+  src: url('./font/Pokemon Hollow.ttf');
 }
 @font-face {
   font-family: 'Pokemon Solid';
-  src: url('../pokedex/src/assets/font/Pokemon Solid.ttf');
+  src: url('./font/Pokemon Solid.ttf');
 }
 
 /* semantic color variables for this project */

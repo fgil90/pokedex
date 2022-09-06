@@ -2,9 +2,9 @@
     
     <div class="container mt-3">
         <div class="row">
-            <div class="col-1 col-sm-1  bordinha"><P>&lt;</P></div>
+            <div class="col-1 col-sm-1  bordinha"><p>&lt;</p></div>
             <div class="col-9 col-sm-10 bordinha name-text"><h2>Cyndaquil</h2></div>
-            <div class="col-1 col-sm-1 bordinha"><P>></P></div>        
+            <div class="col-1 col-sm-1 bordinha"><p>></p></div>        
         </div>
     </div>
 
@@ -46,7 +46,7 @@
                     <li>bla bla bla</li>
                     <li>bla bla bla</li>
                     <li>bla bla bla</li>
-                </ul>                
+                </ul>
             </div>
         </div>
     </div>
