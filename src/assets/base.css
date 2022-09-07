@@ -1,33 +1,51 @@
 :root {
     
-    --pkn-white: #FFFFFF;
-    --pkn-black: #000000;
-    --pkn-yellow: #Fbd743;
-    --pkn-pink: #E900FF;
-    --pkn-red: #ff1f1f;
-    --pkn-white: #5db9ff;
-    --pkn-darkblue: #363b81;
-    --pkn-purple: #5800FF;
-    
-    --vt-c-white: #ffffff;
-    --vt-c-white-soft: #f8f8f8;
-    --vt-c-white-mute: #f2f2f2;
-    
-    --vt-c-black: #181818;
-    --vt-c-black-soft: #222222;
-    --vt-c-black-mute: #282828;
-    
-    --vt-c-indigo: #2c3e50;
-    
-    --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-    --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-    --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-    --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-    
-    --vt-c-text-light-1: var(--vt-c-indigo);
-    --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-    --vt-c-text-dark-1: var(--vt-c-white);
-    --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  /* Colorset Palete */
+  --pkn-white: #FFFFFF;
+  --pkn-black: #000000;
+  --pkn-yellow: #Fbd743;
+  --pkn-pink: #E900FF;
+  --pkn-red: #ff1f1f;
+  --pkn-lightblue: #5db9ff;
+  --pkn-darkblue: #363b81;
+  --pkn-purple: #5800FF;
+
+  /* Colortipes*/
+  --pkn-bug: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
+  --pkn-dark: linear-gradient(180deg, #707070 50%, #707070 50%);
+  --pkn-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  --pkn-eletric: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  --pkn-fairy: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  --pkn-fighting: linear-gradient(180deg, #d56723 50%, #d56723 50%);
+  --pkn-fire: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+  --pkn-flying: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  --pkn-ghost: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
+  --pkn-grass: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  --pkn-ground: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  --pkn-ice: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  --pkn-normal: linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
+  --pkn-poison: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+  --pkn-psychc: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
+  --pkn-rock: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
+  --pkn-steel: linear-gradient(180deg, #9eb7b8 50%, #9eb7b8 50%);
+  --pkn-water: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+  
+  /* Vite Standards */
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;    
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;    
+  --vt-c-indigo: #2c3e50;    
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);    
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 }
 
 /* FONT FAMILY */
@@ -53,42 +71,164 @@
     --color-text: var(--vt-c-text-light-1);
   
     --section-gap: 160px;
+}
+  
+  
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
   }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Roboto', 'Pokemon Solid', 'Pokemon Hollow', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}  
+
+
+/* Backgroud Colors */
+
+.bg-pkn-white{
+  background: var(--pkn-white);
+}
+.bg-pkn-black{
+  background: var(--pkn-black);
+}
+.bg-pkn-yellow{
+  background: var(--pkn-yellow);
+  color: var(--pkn-black);
+}
+.bg-pkn-pink{
+  background: var(--pkn-pink);
+}
+.bg-pkn-red{
+  background: var(--pkn-red);
+}
+.bg-pkn-lightblue{
+  background: var(--pkn-lightblue);
+}
+.bg-pkn-darkblue{
+  background: var(--pkn-darkblue);
+}
+.bg-pkn-purple{
+  background: var(--pkn-purple);
+}
+
+
+/* POKEMON TYPE BADGES*/
+
+.badge-bug{
+background: var(--pkn-bug);
+color: white;
+} 
+
+.badge-dark{
+background: var(--pkn-dark);
+color: white;
+}  
+
+.badge-dragon{
+background: var(--pkn-dragon);
+color: white;
+}
+
+.badge-eletric{
+background: var(--pkn-eletric);
+color: white;
+}
+
+.badge-fairy{
+background: var(--pkn-fairy);
+color: white;
+}
+
+.badge-fighter{
+background: var(--pkn-fighting);
+color: white;
+}
   
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background: var(--vt-c-black);
-      --color-background-soft: var(--vt-c-black-soft);
-      --color-background-mute: var(--vt-c-black-mute);
-  
-      --color-border: var(--vt-c-divider-dark-2);
-      --color-border-hover: var(--vt-c-divider-dark-1);
-  
-      --color-heading: var(--vt-c-text-dark-1);
-      --color-text: var(--vt-c-text-dark-2);
-    }
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    position: relative;
-    font-weight: normal;
-  }
-  
-  body {
-    min-height: 100vh;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: color 0.5s, background-color 0.5s;
-    line-height: 1.6;
-    font-family: 'Roboto', 'Pokemon Solid', 'Pokemon Hollow', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
-      Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+.badge-fire{
+background: var(--pkn-fire);
+color: white;
+}
+
+.badge-flying{
+background: var(--pkn-flying);
+color: white;
+}
+
+.badge-ghost{
+background: var(--pkn-ghost);
+color: white;
+}
+
+.badge-grass{
+background: var(--pkn-grass);
+color: white;
+}
+
+.badge-ground{
+background: var(--pkn-ground);
+color: white;
+}
+
+.badge-ice{
+background: var(--pkn-ice);
+color: white;
+}
+
+.badge-normal{
+background: var(--pkn-normal);
+color: white;
+}
+
+.badge-poison{
+background: var(--pkn-poison);
+color: white;
+}
+
+.badge-psychc{
+background: var(--pkn-psychc);
+color: white;
+}
+
+.badge-rock{
+background: var(--pkn-rock);
+color: white;
+}
+
+.badge-steel{
+background: var(--pkn-steel);
+color: white;
+}
+
+.badge-water{
+background: var(--pkn-water);
+color: white;
+}
