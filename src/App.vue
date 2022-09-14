@@ -7,7 +7,7 @@ import { ref } from "vue";
 
 const currentData = ref({});
 
-async function logTest(value:string){
+async function connectAPI(value:string){
   try {
     let response: any = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
     let data: any = await response.json();
@@ -22,7 +22,7 @@ async function logTest(value:string){
 </script>
 
 <template>  
-  <MyHeader @test="logTest" ></MyHeader>
+  <MyHeader @test="connectAPI" ></MyHeader>
   <MyBody :pokeData="currentData"></MyBody>
   <MyFooter></MyFooter>
   <RouterView />

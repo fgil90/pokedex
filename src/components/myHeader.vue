@@ -34,7 +34,7 @@
             </ul> -->
         </div>
         <div>
-            <form class="form-inline" @submit.prevent="$emit('test', searchValue)">
+            <form class="form-inline" @submit.prevent="$emit('connectAPI', searchValue)">
                 <div class="input-group">
                     <!-- SEARCH IMPUT -->
                     <input v-model="searchValue" type="text" class="form-control" placeholder="Search" aria-label="Username"
