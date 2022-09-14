@@ -1,6 +1,9 @@
 <script setup lang="ts">
     import PokemonLogoIcon from "./icons/IconPokemonLogo.vue"
     import SearchIcon from "./icons/IconSearch.vue"
+
+    let searchValue: any;
+
 </script>
 
 <template>
@@ -14,7 +17,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse mr-1" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <!-- <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">
                         <img src="../assets/icon-home.svg" height="50"/><small>Home</small><span class="sr-only">(current)</span>
@@ -28,16 +31,20 @@
                     <a class="dropdown-item text-light" href="#">Nintendo DS</a>
                     <a class="dropdown-item text-light" href="#">Game Cube</a>                    
                 </div>
-            </ul>
+            </ul> -->
         </div>
         <div>
-            <form class="form-inline">
+            <form class="form-inline" @submit.prevent="$emit('test', searchValue)">
                 <div class="input-group">
                     <!-- SEARCH IMPUT -->
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Username"
+                    <input v-model="searchValue" type="text" class="form-control" placeholder="Search" aria-label="Username"
                         aria-describedby="basic-addon1">
                     <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"><SearchIcon class="search-icon"/></span>
+                        <button 
+                            class="input-group-text" 
+                            id="basic-addon2"
+                            
+                        ><SearchIcon class="search-icon"/></button>
                     </div>
                 </div>
             </form>
