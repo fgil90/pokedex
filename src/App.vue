@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import {RouterView } from "vue-router";
 import MyHeader from "./components/myHeader.vue";
 import MyBody from "./components/myBody.vue";
 import MyFooter from "./components/myFooter.vue";
@@ -7,14 +7,15 @@ import { ref } from "vue";
 
 const currentData = ref({});
 
-async function connectAPI(value:string){
+async function getPokemonByName(name:string){
   try {
-    let response: any = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
+    name = name.toLowerCase();
+    let response: any = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     let data: any = await response.json();
     console.log(data);
     currentData.value = data;
   } catch (error) {
-    alert(`Pokemon ${value} does not exist`);
+    alert(`Pokemon ${name} does not exist`);
     console.log(error);
   }
 }
@@ -22,7 +23,7 @@ async function connectAPI(value:string){
 </script>
 
 <template>  
-  <MyHeader @test="connectAPI" ></MyHeader>
+  <MyHeader @connectAPI="getPokemonByName" ></MyHeader>
   <MyBody :pokeData="currentData"></MyBody>
   <MyFooter></MyFooter>
   <RouterView />
