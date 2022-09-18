@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {RouterView } from "vue-router";
-import MyBody from "./components/myBody.vue";
 import { ref } from "vue";
 import PokemonLogoIcon from "../src/components/icons/IconPokemonLogo.vue"
 import SearchIcon from "../src/components/icons/IconSearch.vue"
@@ -10,6 +9,8 @@ import IconInstagram from "./components/icons/IconInstagram.vue"
 import IconLinkedin from "./components/icons/IconLinkedin.vue"
 import IconGoogleplay from "./components/icons/IconGoogleplay.vue"
 import IconGit from "./components/icons/IconGit.vue"
+import Pokemons from "./components/Pokemons.vue"
+import MyBody  from "./components/myBody.vue"
 
 let searchValue: any;
 
@@ -88,6 +89,7 @@ async function getPokemonByName(name:string){
   </header>
   <!-- /HEADER -->
 
+  <Pokemons></Pokemons>
   <MyBody :pokeData="currentData"></MyBody>
 
   <!-- FOOTER -->
@@ -141,8 +143,8 @@ async function getPokemonByName(name:string){
 
 <style scoped>
 .pokemon-logo{
-    height: 50px;
-    width: 120px;
+    height: 60px;
+    width: 140px;
 }
 
 .facebook-logo{
