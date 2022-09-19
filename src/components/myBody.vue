@@ -1,25 +1,19 @@
 <script setup lang="ts">
 const props: any = defineProps(['pokeData'])
 
-let state: string = "home"
 
-function getName() {
-    let name: string = props.pokeData.name as string;
-    if (!name) return "";
-    return name.charAt(0).toUpperCase().concat(name.slice(1));
-}
 
 </script>
 
 <template>
-    <div v-if="state === 'home'">
+    <div>
         <div class="container  mt-3">
             <div class="row">
                 <div class="col-1 col-sm-1  sm-border">
                     <p>&lt;</p>
                 </div>
                 <div class="col-9 col-sm-10 sm-border name-text bg-pkn-yellow">
-                    <h2>{{getName()}}</h2>
+                    <h2>Cyndaquil</h2>
                 </div>
                 <div class="col-1 col-sm-1 sm-border">
                     <p>></p>
@@ -87,10 +81,8 @@ function getName() {
             </div>
         </div>
     </div>
-    <div v-if="state==='pokemon'">
-    BUNDALORD</div>
-    <link rel="stylesheet" href="../assets">
-
+    <!-- BAD PRACTICE. LINKS SHOULD NEVER BE ON THE BODY OF THE HTML. -->
+    <link rel="stylesheet" href="../assets"> 
 
 </template>
 

@@ -1,6 +1,26 @@
 <script setup lang='ts'>
 
+import { ref } from 'vue';
 import PokemonCard from './PokemonCard.vue'
+
+const pokemonList = ref([{name:"", url:""}]);
+
+async function getPokemonList(off:number=0, limit:number=20){
+    try {
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${off}&limit=${limit}`);
+        let data = await response.json();
+        pokemonList.value = await data.results;
+        console.log(pokemonList.value);
+        
+        return await data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+let currentPokemonData = getPokemonList(0,20)
+// console.log(currentPokemonData);
+
 
 </script>
 
@@ -16,57 +36,7 @@ import PokemonCard from './PokemonCard.vue'
     
     <!-- CARDS -->
     <div class="container card-body d-flex flex-wrap mb-3">
-        
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        <PokemonCard></PokemonCard>
-        
+        <PokemonCard v-for="pkmn in pokemonList" :key="pkmn.name" :pkmn-object="pkmn"></PokemonCard>
     </div>
     <!-- /CARDS -->
 

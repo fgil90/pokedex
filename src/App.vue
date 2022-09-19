@@ -13,8 +13,13 @@ import Pokemons from "./components/Pokemons.vue"
 import MyBody  from "./components/myBody.vue"
 
 let searchValue: any;
+let state = ref("home");
 
 const currentData = ref({});
+
+function setState(value:string):void{
+  state.value = value;
+}
 
 async function getPokemonByName(name:string){
   try {
@@ -36,7 +41,7 @@ async function getPokemonByName(name:string){
   <!-- HEADER -->
   <header id="myHeader" @connectAPI="getPokemonByName">
     <nav class="navbar navbar-expand-lg navbar-dark position-sticky bg-dark ml-auto">
-      <a class="navbar-brand" href="#" style="font-family: 'Pokemon Hollow'; font-size: 25px;">
+      <a class="navbar-brand" href="#" @click="setState('home')" style="font-family: 'Pokemon Hollow'; font-size: 25px;">
         <PokemonLogoIcon class="pokemon-logo"/>
           </a>                       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -45,10 +50,10 @@ async function getPokemonByName(name:string){
           </button>
           <div >
 
-              <a class="navbar-brand" href="">Pokemon</a>
-              <a class="navbar-brand" href="">Moves</a>
-              <a class="navbar-brand" href="">Items</a>
-              <a class="navbar-brand" href="">Abilities</a>
+              <a class="navbar-brand" href="#"  @click="setState('pokemon')">Pokemon</a>
+              <a class="navbar-brand" href="#">Moves</a>
+              <a class="navbar-brand" href="#">Items</a>
+              <a class="navbar-brand" href="#">Abilities</a>
           </div>
           
           <div class="collapse navbar-collapse mr-1" id="navbarNavDropdown">
@@ -89,8 +94,8 @@ async function getPokemonByName(name:string){
   </header>
   <!-- /HEADER -->
 
-  <Pokemons></Pokemons>
-  <MyBody :pokeData="currentData"></MyBody>
+  <Pokemons v-if="state === 'pokemon'"></Pokemons>
+  <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody>
 
   <!-- FOOTER -->
   <footer class="bg-dark text-center text-white">
