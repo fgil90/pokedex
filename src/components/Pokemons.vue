@@ -18,19 +18,16 @@ async function getPokemonList(off:number=0, limit:number=20){
     }
 }
 
-let currentPokemonData = getPokemonList(0,20)
+let currentPokemonData = getPokemonList(0,1000)
 // console.log(currentPokemonData);
 
 
 </script>
 
-<template>
-    
-    
+<template>      
     <!-- TITLE -->
     <div class="title">
-        <h1 class="h1 text-primary text-center m-3">Choose your pokemon</h1>
-        
+        <h1 class="h1 text-primary text-center m-3">Choose your pokemon</h1>        
     </div>
     <!-- /TITLE -->
     
@@ -44,6 +41,7 @@ let currentPokemonData = getPokemonList(0,20)
 
 <style scoped>
 .container{
+    display: flex;
     justify-content: center;
 }
 

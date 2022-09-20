@@ -5,7 +5,7 @@ const props: any = defineProps(['pokeData'])
 
 <template>
     <div>
-        <div class="container  mt-3">
+        <div class="container mt-3">
             <div class="row">
                 <div class="col-1 col-sm-1  sm-border">
                     <p>&lt;</p>

@@ -18,7 +18,7 @@
         }
     }
     
-    let currentmoveData = getMoveList(0,20)
+    let currentmoveData = getMoveList(0,200)
     // console.log(currentmoveData);
         
     </script>
@@ -26,8 +26,7 @@
 <template>
     <!-- TITLE -->
     <div class="title">
-    <h1 class="h1 text-primary text-center m-3">Move List</h1>
-        
+    <h1 class="h1 text-primary text-center m-3">Move List</h1>        
     </div>
     <!-- /TITLE -->    
     <!-- CARDS -->

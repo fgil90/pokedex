@@ -1,3 +1,5 @@
+
+  <!-------------------------- SCRIPT ------------------------>
 <script setup lang="ts">
 import {RouterView } from "vue-router";
 import { ref } from "vue";
@@ -16,7 +18,7 @@ import Items from "./components/Items.vue"
 import Ability from "./components/Ability.vue"
 
 let searchValue: any;
-let state = ref("home");
+let state = ref("details");
 
 const currentData = ref({});
 
@@ -38,12 +40,13 @@ async function getPokemonByName(name:string){
 }
 
 </script>
+  <!-------------------------- /SCRIPT ------------------------>
 
 <template>  
 
-  <!-- HEADER -->
+  <!-------------------------- HEADER ------------------------>
   <header id="myHeader" @connectAPI="getPokemonByName">
-    <nav class="navbar navbar-expand-lg navbar-dark position-sticky bg-dark ml-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark d-flex ml-auto">
       <a class="navbar-brand" href="#" @click="setState('details')" style="font-family: 'Pokemon Hollow'; font-size: 25px;">
         <PokemonLogoIcon class="pokemon-logo"/>
           </a>                       
@@ -53,18 +56,18 @@ async function getPokemonByName(name:string){
           </button>
           <div >
 
-              <a class="navbar-brand" href="#"  @click="setState('pokemon')">Pokemon</a>
-              <a class="navbar-brand" href="#"  @click="setState('moves')">Moves</a>
-              <a class="navbar-brand" href="#"  @click="setState('itens')">Items</a>
-              <a class="navbar-brand" href="#"  @click="setState('ability')">Ability</a>
           </div>
           
           <div class="collapse navbar-collapse mr-1" id="navbarNavDropdown">
-              <!-- <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">
-                          <img src="../assets/icon-home.svg" height="50"/><small>Home</small><span class="sr-only">(current)</span>
-                      </a>
+            <a class="navbar-brand" href="#"  @click="setState('pokemon')">Pokemon</a>
+            <a class="navbar-brand" href="#"  @click="setState('moves')">Moves</a>
+            <a class="navbar-brand" href="#"  @click="setState('itens')">Items</a>
+            <a class="navbar-brand" href="#"  @click="setState('ability')">Ability</a>
+            <!-- <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <img src="../assets/icon-home.svg" height="50"/><small>Home</small><span class="sr-only">(current)</span>
+              </a>
                   </li>
                   <a class="nav-link dropdown-toggle mr-5" href="#" role="button" data-toggle="dropdown"
                   aria-expanded="false"><img src="../assets/icon-folder.svg" height="50"/><small>Emulators</small></a>
@@ -76,7 +79,7 @@ async function getPokemonByName(name:string){
                   </div>
               </ul> -->
           </div>
-          <div>
+          <div class="search-bar">
               <form class="form-inline" @submit.prevent="$emit('connectAPI', searchValue)">
                   <div class="input-group">
                       <!-- SEARCH IMP -->
@@ -89,114 +92,173 @@ async function getPokemonByName(name:string){
                           ><SearchIcon class="search-icon"/></button>
                       </div>
                   </div>
-              </form>
-              
+              </form>              
           </div>
       </nav>
   </header>
-  <!-- /HEADER -->
+  <!------------------------- /HEADER ------------------------>
 
 
+
+  <!-------------------------- HTML BODY --------------------->
   <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody>
   <Pokemons v-if="state === 'pokemon'"></Pokemons>
   <Moves v-if="state === 'moves'"></Moves>
   <Items v-if="state === 'itens'"></Items>
-  <Ability v-if="state === 'ability'"></Ability>  
+  <Ability v-if="state === 'ability'"></Ability>
+  <!------------------------- /HTML BODY --------------------->
   
+
+
     
-  <!-- FOOTER -->
-  <footer class="bg-dark text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
+  <!------------------------- FOOTER ------------------------->
+  <footer class="text-center text-white">
+        <!------------------- Grid container ----------------->
+        <div class="container p-1 pb-0">
+            <!------------ Section: Social media ------------->
             <small>Check it out to learn more about </small>
-            <section class="mb-4">
+            <section class="">
                 
-                <!-- Facebook -->
-                <a class="btn btn-floating m-1" href="https://www.facebook.com/Pokemon" role="button"
+                <!------------- Facebook --------------------->
+                <a class="btn btn-floating m-0 p-0" href="https://www.facebook.com/Pokemon" role="button"
                 ><IconFacebook class="facebook-logo"/></a>
                 
-                <!-- Twitter -->
-                <a class="btn  btn-floating m-1" href="https://twitter.com/Pokemon" role="button"
+                <!------------- Twitter ---------------------->
+                <a class="btn  btn-floating  m-0 p-0" href="https://twitter.com/Pokemon" role="button"
                 ><IconTwitter class="twitter-logo"/></a>
                 
-                <!-- Instagram -->
-                <a class="btn  btn-floating m-1" href="https://www.instagram.com/pokemon/" role="button"
-                ><IconInstagram class="Instagram-logo"/></a>
+                <!------------- Instagram --------------------->
+                <a class="btn  btn-floating  m-0 p-0" href="https://www.instagram.com/pokemon/" role="button"
+                ><IconInstagram class="instagram-logo"/></a>
                 
-                <!-- Linkedin -->
-                <a class="btn  btn-floating m-1" href="https://www.linkedin.com/company/pokemon/" role="button"
+                <!------------- Linkedin ---------------------->
+                <a class="btn  btn-floating  m-0 p-0" href="https://www.linkedin.com/company/pokemon/" role="button"
                 ><IconLinkedin class="linkedin-logo"/></a>
                 
-                <!-- Pokemon Go -->
-                <a class="btn  btn-floating m-1" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=pt_BR&gl=US" role="button"
+                <!------------- Pokemon Go -------------------->
+                <a class="btn  btn-floating  m-0 p-0" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=pt_BR&gl=US" role="button"
                 ><IconGoogleplay class="gplay-logo"/></a>
 
-                <!-- Github -->
-                <a class="btn  btn-floating m-1" href="https://github.com/topics/pokemon" role="button"
+                <!--------------- Github ---------------------->
+                <a class="btn  btn-floating  m-0 p-0" href="https://github.com/topics/pokemon" role="button"
                 ><IconGit class="git-logo"/></a>
 
             </section>
-            <!-- Section: Social media -->
+            <!------------ Section: Social media -------------->
         </div>
-        <!-- Grid container -->
+        <!------------------  Grid container ------------------>
 
-        <!-- COPYRIGHT -->        
+        <!-- ------------------ COPYRIGHT --------------------->        
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            <small>© 2022 Copyright - Produced by <a class="text-white" href="https://github.com/fgil90">Felipe Gil</a> <span>e</span> <a class="text-white" href="https://github.com/lindotex">Alisson Lindote </a></small>
+            <small>© 2022 Copyright - Produced by <a class="text-white git-link" href="https://github.com/fgil90">Felipe Gil</a> <span>e</span> <a class="text-white git-link" href="https://github.com/lindotex">Alisson Lindote </a></small>
         </div>
-        <!-- /COPYRIGHT -->
-    </footer>
-    <!-- /FOOTER -->
+        <!-- ----------------- /COPYRIGHT ---------------------->
+  </footer>
+  <!-- -----------------------/FOOTER------------------------->
 
   <RouterView />
 
 </template>
 
+<!---------------------------- STYLE SCOPED ------------------>
 <style scoped>
+
+/*--------------------------- HEADER -----------------------------*/
+header{
+  background-color: transparent;
+}
+
+@media (max-width: 767.98px) {
+  search-bar{
+    width: 100% !important;
+  }
+  
+}
+
 .pokemon-logo{
     height: 60px;
     width: 140px;
-}
-
-.facebook-logo{
-  height: 50px;
-  width: 80px;
-  color: #3b5998;
-}
-
-.twitter-logo{
-  height: 50px;
-  width: 80px;
-  color: #00acee;
-  
-}
-.instagram-logo{
-  height: 50px;
-  width: 80px;
-  
-}
-.linkedin-logo{
-  height: 50px;
-  width: 80px;
-  
-}
-.gplay-logo{
-  height: 50px;
-  width: 60px;
-  
-}
-.git-logo{
-  height: 50px;
-  width: 60px;
-  
 }
 .search-icon{
     height: 20px;
     width: 20px;
 }
-
 .input-group{
     width: 100%;
+}
+
+/*--------------------------- FOOTER --------------------------- */
+footer section{
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/* MEDIA LOGOS ------------------*/
+.facebook-logo{
+  height: 30px;
+  width: 30px;
+  color: #3b5998;
+  padding: 0;
+  margin: 0;
+}
+.facebook-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+.twitter-logo{
+  height: 30px;
+  width: 50px;
+  color: #00acee;  
+}
+.twitter-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+.instagram-logo{
+  height: 30px;
+  width: 30px;  
+}
+.instagram-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+.linkedin-logo{
+  height: 30px;
+  width: 50px;  
+}
+.linkedin-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+.gplay-logo{
+  height: 26px;
+  width: 28px;  
+}
+.gplay-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+.git-logo{
+  height: 28px;
+  width: 44px;  
+}
+.git-logo:hover{
+  height: 48px;
+  width: 48px;
+  transition: 200ms;
+}
+
+/* GITHUB LINKS ------------------*/
+.git-link{
+  text-decoration: underline;
 }
 </style>
