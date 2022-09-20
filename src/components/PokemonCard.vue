@@ -52,4 +52,7 @@ h5{
     align-self: right;
     align-self: bottom;
 }
+.card-body{
+    padding: 0px !important;
+}
 </style>

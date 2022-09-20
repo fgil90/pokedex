@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const props: any = defineProps(['pokeData'])
 
-
-
 </script>
 
 <template>

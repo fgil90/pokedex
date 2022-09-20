@@ -7,7 +7,7 @@
     
     async function getMoveList(off:number=0, limit:number=20){
         try {
-            let response = await fetch(`https://pokeapi.co/api/v2/move/?offset=${off}&limit=${limit}`);
+            let response = await fetch(`https://pokeapi.co/api/v2/item/?offset=${off}&limit=${limit}`);
             let data = await response.json();
             moveList.value = await data.results;
             console.log(moveList.value);
@@ -26,7 +26,7 @@
 <template>
     <!-- TITLE -->
     <div class="title">
-    <h1 class="h1 text-primary text-center m-3">Move List</h1>
+    <h1 class="h1 text-primary text-center m-3">Item List</h1>
         
     </div>
     <!-- /TITLE -->    

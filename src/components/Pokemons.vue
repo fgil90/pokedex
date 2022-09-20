@@ -29,7 +29,7 @@ let currentPokemonData = getPokemonList(0,20)
     
     <!-- TITLE -->
     <div class="title">
-        <h1 class="h1 text-primary text-center m-3">Escolha seu pokemon</h1>
+        <h1 class="h1 text-primary text-center m-3">Choose your pokemon</h1>
         
     </div>
     <!-- /TITLE -->
