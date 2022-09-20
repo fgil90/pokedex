@@ -2,6 +2,7 @@
   import { ref } from 'vue';
 
   const props:any = defineProps(['pkmnObject']);
+
   let pokeName:string = props.pkmnObject.name as string;
   let pokeUrl:string = props.pkmnObject.url as string;
   let pokeId:string = pokeUrl.split('/').reverse()[1]
