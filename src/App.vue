@@ -11,6 +11,7 @@ import IconGoogleplay from "./components/icons/IconGoogleplay.vue"
 import IconGit from "./components/icons/IconGit.vue"
 import Pokemons from "./components/Pokemons.vue"
 import MyBody  from "./components/myBody.vue"
+import Moves from "./components/moves.vue"
 
 let searchValue: any;
 let state = ref("home");
@@ -93,9 +94,9 @@ async function getPokemonByName(name:string){
       </nav>
   </header>
   <!-- /HEADER -->
-
-  <Pokemons v-if="state === 'pokemon'"></Pokemons>
-  <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody>
+  <Moves></Moves>
+  <!-- <Pokemons v-if="state === 'pokemon'"></Pokemons>
+  <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody> -->
 
   <!-- FOOTER -->
   <footer class="bg-dark text-center text-white">
