@@ -25,22 +25,27 @@ function getPokeName() {
 
 <template>
   <!-- we have to see if there is a better way of doing this without inline styling -->
-  <div class="div-pkn m-2 d-flex bg-pokemon" :style="{backgroundImage: 'url('+ pkmnImg + ')'}"> 
+  <button class="div-pkn m-2 d-flex bg-pokemon" :style="{backgroundImage: 'url('+ pkmnImg + ')'}"> 
     <div class="card-body">
-      <h5 class="card-title text-primary">{{getPokeName()}}</h5>      
+      <h5 class="card-title text-dark">{{getPokeName()}}</h5>
+      <p class="card-text text-dark">#{{pokeId}}</p>      
     </div>
-  </div>
+  </button>
 </template>
 
 <style scoped>
 h5{
-      color: black !important;
       font-weight: bold;
       margin: 0;
       padding: 0;
       text-align: center;
-  }
-
+}
+div p{
+  text-align: end;
+  position: relative;
+  top: 90px;
+  
+}
 .div-pkn{
     width: 140px    ;
     height: 140px;

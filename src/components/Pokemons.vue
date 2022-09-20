@@ -10,13 +10,10 @@ Helper.getList('pokemon').then((response)=>{pokemonList.value = response});
 
 </script>
 
-<template>
-
-
+<template>      
     <!-- TITLE -->
     <div class="title">
-        <h1 class="h1 text-primary text-center m-3">Choose your pokemon</h1>
-
+        <h1 class="h1 text-primary text-center m-3">Choose your pokemon</h1>        
     </div>
     <!-- /TITLE -->
 
@@ -29,7 +26,8 @@ Helper.getList('pokemon').then((response)=>{pokemonList.value = response});
 </template>
 
 <style scoped>
-.container {
+.container{
+    display: flex;
     justify-content: center;
 }
 
