@@ -10,8 +10,10 @@ import IconLinkedin from "./components/icons/IconLinkedin.vue"
 import IconGoogleplay from "./components/icons/IconGoogleplay.vue"
 import IconGit from "./components/icons/IconGit.vue"
 import Pokemons from "./components/Pokemons.vue"
-import MyBody  from "./components/myBody.vue"
-import Moves from "./components/moves.vue"
+import MyBody  from "./components/MyBody.vue"
+import Moves from "./components/Moves.vue"
+import Items from "./components/Items.vue"
+import Ability from "./components/Ability.vue"
 
 let searchValue: any;
 let state = ref("home");
@@ -42,7 +44,7 @@ async function getPokemonByName(name:string){
   <!-- HEADER -->
   <header id="myHeader" @connectAPI="getPokemonByName">
     <nav class="navbar navbar-expand-lg navbar-dark position-sticky bg-dark ml-auto">
-      <a class="navbar-brand" href="#" @click="setState('home')" style="font-family: 'Pokemon Hollow'; font-size: 25px;">
+      <a class="navbar-brand" href="#" @click="setState('details')" style="font-family: 'Pokemon Hollow'; font-size: 25px;">
         <PokemonLogoIcon class="pokemon-logo"/>
           </a>                       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -52,9 +54,9 @@ async function getPokemonByName(name:string){
           <div >
 
               <a class="navbar-brand" href="#"  @click="setState('pokemon')">Pokemon</a>
-              <a class="navbar-brand" href="#">Moves</a>
-              <a class="navbar-brand" href="#">Items</a>
-              <a class="navbar-brand" href="#">Abilities</a>
+              <a class="navbar-brand" href="#"  @click="setState('moves')">Moves</a>
+              <a class="navbar-brand" href="#"  @click="setState('itens')">Items</a>
+              <a class="navbar-brand" href="#"  @click="setState('ability')">Ability</a>
           </div>
           
           <div class="collapse navbar-collapse mr-1" id="navbarNavDropdown">
@@ -83,8 +85,7 @@ async function getPokemonByName(name:string){
                       <div class="input-group-append">
                           <button 
                               class="input-group-text" 
-                              id="basic-addon2"
-                              
+                              id="basic-addon2"                              
                           ><SearchIcon class="search-icon"/></button>
                       </div>
                   </div>
@@ -94,10 +95,15 @@ async function getPokemonByName(name:string){
       </nav>
   </header>
   <!-- /HEADER -->
-  <Moves></Moves>
-  <!-- <Pokemons v-if="state === 'pokemon'"></Pokemons>
-  <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody> -->
 
+
+  <MyBody v-if="state === 'details'" :pokeData="currentData"></MyBody>
+  <Pokemons v-if="state === 'pokemon'"></Pokemons>
+  <Moves v-if="state === 'moves'"></Moves>
+  <Items v-if="state === 'itens'"></Items>
+  <Ability v-if="state === 'ability'"></Ability>  
+  
+    
   <!-- FOOTER -->
   <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
