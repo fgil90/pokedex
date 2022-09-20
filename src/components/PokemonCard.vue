@@ -9,11 +9,15 @@
   let pkmnImg = ref("");
   pkmnImg.value = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`
 
-  function getName() {
-    let name: string = pokeName;
-    if (!name) return "";
-    return name.charAt(0).toUpperCase().concat(name.slice(1));
-  }
+function getPokeName() {
+  let name: string = pokeName;
+  if (!name) return "";
+  let nameArr: Array<string> = name.split('-');
+  nameArr = nameArr.map(word => {
+    return word.charAt(0).toUpperCase().concat(word.slice(1));
+  })
+  return nameArr.join(" ");
+}
 
 </script>
 
@@ -22,7 +26,7 @@
   <!-- we have to see if there is a better way of doing this without inline styling -->
   <div class="div-pkn m-2 d-flex bg-pokemon" :style="{backgroundImage: 'url('+ pkmnImg + ')'}"> 
     <div class="card-body">
-      <h5 class="card-title text-primary">{{getName()}}</h5>      
+      <h5 class="card-title text-primary">{{getPokeName()}}</h5>      
     </div>
   </div>
 </template>

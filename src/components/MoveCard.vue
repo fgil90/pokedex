@@ -5,10 +5,15 @@
     let moveUrl:string = props.moveObject.url as string;
     let moveId:string = moveUrl.split('/').reverse()[1]
 
-    function getMove() {
-      let name: string = moveName;
-      if (!name) return "";
-      return name.charAt(0).toUpperCase().concat(name.slice(1));
+    function getMoveName() {
+        //Makes the name have Title Case
+        let name: string = moveName;
+        if (!name) return "";
+        let nameArr:Array<string> = name.split('-');
+        nameArr = nameArr.map(word=>{
+            return word.charAt(0).toUpperCase().concat(word.slice(1));
+        })
+        return nameArr.join(" ");
     }
   
 </script>
@@ -17,7 +22,7 @@
     <div class="m-4 d-flex m-2">
         <div class="card">
             <button class="btn card-body text-primary ">
-                {{getMove()}}
+                {{getMoveName()}}
             </button>
         </div>
     </div>
