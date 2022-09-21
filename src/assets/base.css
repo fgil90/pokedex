@@ -146,89 +146,144 @@ body {
 .badge-bug{
 background: var(--pkn-bug);
 color: white;
+border-radius: 20%;
+text-align: center;
 } 
 
 .badge-dark{
 background: var(--pkn-dark);
 color: white;
+border-radius: 20%;
+text-align: center;
 }  
 
 .badge-dragon{
 background: var(--pkn-dragon);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-eletric{
 background: var(--pkn-eletric);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-fairy{
 background: var(--pkn-fairy);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-fighter{
 background: var(--pkn-fighting);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
   
 .badge-fire{
-background: var(--pkn-fire);
-color: white;
+  background: var(--pkn-fire);
+  color: white;
+  border-radius: 20%;
+  text-align: center;
+  
 }
 
 .badge-flying{
 background: var(--pkn-flying);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-ghost{
 background: var(--pkn-ghost);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-grass{
 background: var(--pkn-grass);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-ground{
 background: var(--pkn-ground);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-ice{
 background: var(--pkn-ice);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-normal{
 background: var(--pkn-normal);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-poison{
 background: var(--pkn-poison);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-psychc{
 background: var(--pkn-psychc);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-rock{
 background: var(--pkn-rock);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-steel{
 background: var(--pkn-steel);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
 
 .badge-water{
 background: var(--pkn-water);
 color: white;
+border-radius: 20%;
+text-align: center;
 }
+
+/* HEADER */
+
+.pokemon-logo{
+  height: 80px;
+  width: 120px;
+}
+
+.search-icon{
+  height: 20px;
+  width: 20px;
+}
+
+.input-group{
+  width: 100%;
+}
+
+/*  */
