@@ -11,7 +11,7 @@ function getValueFromKey(key:string):object{
     return JSON.parse(localStorage.getItem(key) as string)
 }
 
-export async function getList(type:string, off: number = 0, limit: number = 20){
+export async function getList(type:string, off: number = 0, limit: number = 200){
     
     if (isCached(`${type}List${off}to${limit}`)) {
         return getValueFromKey(`${type}List${off}to${limit}`);

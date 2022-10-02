@@ -21,7 +21,7 @@ function getMoveName() {
 <template>
     <div class="m-4 d-flex m-2">
         <div class="card">
-            <button class="btn card-body text-primary ">
+            <button class="btn card-body text-dark ">
                 {{getMoveName()}}
             </button>
         </div>
